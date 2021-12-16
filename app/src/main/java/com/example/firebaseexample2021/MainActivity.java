@@ -3,16 +3,18 @@ package com.example.firebaseexample2021;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
+import android.app.Dialog;
 import android.content.Intent;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
     Button btn_log, btn_reg, btn_add, btn_all;
     FirebaseAuth firebaseAuth;
-
+    Dialog dialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,7 +35,19 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }
 
     }
+    public void createRegisterDialog()
+    {
+        dialog = new Dialog(this);
+        dialog.setContentView(R.layout.register_layout);
+        dialog.setTitle("Register");
+        dialog.setCancelable(true);
+        etEmail = dialog.findViewById(R.id.etEmail);
+        etPass = dialog.findViewById(R.id.etPass);
+        btnReg = dialog.findViewById(R.id.btnRegister);
+        btnReg = dialog.setOnClickListener(this);
+        dialog.show();
 
+    }
     private void initElements() {
         btn_log = findViewById(R.id.btn_login);
         btn_reg = findViewById(R.id.btn_register);
@@ -55,6 +69,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
 
             case R.id.btn_register:
+                createRegisterDialog();
                 break;
 
             case R.id.btn_add_post:
