@@ -4,6 +4,7 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
 import android.app.Dialog;
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.view.View;
 import android.widget.Button;
@@ -15,6 +16,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     Button btn_log, btn_reg, btn_add, btn_all;
     FirebaseAuth firebaseAuth;
     Dialog dialog;
+    ProgressDialog progressDialog;
+    //dialogs layout elements
+    EditText et_pass_reg_dialog, et_email_reg_dialog;
+    Button btn_register_reg_dialog;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,10 +47,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         dialog.setContentView(R.layout.register_layout);
         dialog.setTitle("Register");
         dialog.setCancelable(true);
-        etEmail = dialog.findViewById(R.id.etEmail);
-        etPass = dialog.findViewById(R.id.etPass);
-        btnReg = dialog.findViewById(R.id.btnRegister);
-        btnReg = dialog.setOnClickListener(this);
+        et_pass_reg_dialog = dialog.findViewById(R.id.et_pass_reg_dialog);
+        et_email_reg_dialog = dialog.findViewById(R.id.et_email_reg_dialog);
+        btn_register_reg_dialog = dialog.findViewById(R.id.btn_register_reg_dialog);
+        btn_register_reg_dialog.setOnClickListener(this);
         dialog.show();
 
     }
@@ -58,6 +64,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         btn_reg.setOnClickListener(this);
         btn_add.setOnClickListener(this);
         btn_all.setOnClickListener(this);
+
+        progressDialog = new ProgressDialog(this);
     }
 
     @Override
@@ -80,6 +88,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.btn_all_post:
                 break;
 
+            case R.id.btn_register_reg_dialog:
+                registerToFirebase();
+
         }
+    }
+
+    private void registerToFirebase() {
     }
 }
