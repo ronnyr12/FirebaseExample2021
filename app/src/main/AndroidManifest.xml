@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.FirebaseExample2021">
         <activity
+            android:name=".EditPost_Screen"
+            android:exported="false" />
+        <activity
             android:name=".AllPost_Screen"
             android:exported="false" />
         <activity

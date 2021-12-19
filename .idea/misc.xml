@@ -6,9 +6,11 @@
         <entry key="..\:/Users/Ronny/AndroidStudioProjects/FirebaseExample2021/app/src/main/res/layout/activity_addpost.xml" value="0.20989583333333334" />
         <entry key="..\:/Users/Ronny/AndroidStudioProjects/FirebaseExample2021/app/src/main/res/layout/activity_addpost_screen.xml" value="0.20989583333333334" />
         <entry key="..\:/Users/Ronny/AndroidStudioProjects/FirebaseExample2021/app/src/main/res/layout/activity_all_post_screen.xml" value="0.264" />
+        <entry key="..\:/Users/Ronny/AndroidStudioProjects/FirebaseExample2021/app/src/main/res/layout/activity_edit_post_screen.xml" value="0.20989583333333334" />
         <entry key="..\:/Users/Ronny/AndroidStudioProjects/FirebaseExample2021/app/src/main/res/layout/activity_main.xml" value="0.264" />
         <entry key="..\:/Users/Ronny/AndroidStudioProjects/FirebaseExample2021/app/src/main/res/layout/login_layout.xml" value="0.20989583333333334" />
         <entry key="..\:/Users/Ronny/AndroidStudioProjects/FirebaseExample2021/app/src/main/res/layout/register_layout.xml" value="0.20989583333333334" />
+        <entry key="..\:/Users/Ronny/AndroidStudioProjects/FirebaseExample2021/app/src/main/res/layout/single_post_row.xml" value="0.2" />
       </map>
     </option>
   </component>
