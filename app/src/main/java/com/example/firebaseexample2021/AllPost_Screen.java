@@ -8,12 +8,13 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 
+import android.content.Intent;
+import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import android.os.Bundle;
 
 public class AllPost_Screen extends AppCompatActivity {
     ListView lv_posts;
@@ -35,6 +36,17 @@ public class AllPost_Screen extends AppCompatActivity {
 
         retrieveData();
 
+        lv_posts.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView,
+                                    View view, int i, long l) {
+                Post p = posts.get(i);
+                Intent intent = new Intent(AllPost_Screen.this,
+                        EditPost_Screen.class);
+                intent.putExtra("key", p.key);
+                startActivity(intent);
+            }
+        });
         lv_posts.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
             @Override
             public boolean onItemLongClick(AdapterView<?> adapterView, View view, int i, long l) {
@@ -52,13 +64,13 @@ public class AllPost_Screen extends AppCompatActivity {
             @Override
             public void onDataChange(DataSnapshot snapshot) {
                 posts = new ArrayList<>();
-                for (DataSnapshot data: snapshot.getChildren()) {
+                for (DataSnapshot data : snapshot.getChildren()) {
                     Post p = data.getValue(Post.class);
                     posts.add(p);
                 }
                 adapter = new AllPost_Adapter(
                         AllPost_Screen.this,
-                        0,0,
+                        0, 0,
                         posts);
                 lv_posts.setAdapter(adapter);
             }
