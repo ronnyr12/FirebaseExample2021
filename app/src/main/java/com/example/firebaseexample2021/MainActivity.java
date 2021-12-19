@@ -87,7 +87,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
             case R.id.btn_add_post:
                 startActivity(new Intent(
-                        MainActivity.this, AddPost_Screen.class));
+                        MainActivity.this,
+                        AddPost_Screen.class));
                 break;
 
             case R.id.btn_all_post:
@@ -113,6 +114,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                             Toast.makeText(MainActivity.this,
                                     "Succesfully registered", Toast.LENGTH_SHORT).show();
                             btn_log.setText("Logout");
+                            btn_reg.setVisibility(View.INVISIBLE);
                         }
                         else{
                             Toast.makeText(MainActivity.this,
