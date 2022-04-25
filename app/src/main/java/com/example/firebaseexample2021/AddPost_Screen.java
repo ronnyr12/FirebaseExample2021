@@ -16,6 +16,7 @@ public class AddPost_Screen extends AppCompatActivity implements View.OnClickLis
 
     FirebaseDatabase firebaseDatabase;
     DatabaseReference postRef;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
